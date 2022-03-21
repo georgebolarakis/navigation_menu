@@ -4,7 +4,7 @@ import './dummy_data.dart';
 import './category_item.dart';
 
 class CategoriesScreen extends StatelessWidget {
-  const CategoriesScreen({Key? key}) : super(key: key);
+  //const CategoriesScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -13,6 +13,8 @@ class CategoriesScreen extends StatelessWidget {
         title: const Text("Delimeal"),
       ),
       body: GridView(
+        //we need to add some padding around the gridView
+        padding: const EdgeInsets.all(25),
         children: DUMMY_CATEGORIES
             .map((catData) => CategoryItem(catData.title, catData.color))
             .toList(),

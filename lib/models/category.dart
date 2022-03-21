@@ -7,8 +7,8 @@ class Caategory {
   final Color color;
 
   const Caategory({
-    required this.id,
-    required this.title,
+    @required this.id,
+    @required this.title,
     this.color = Colors.amber,
   });
 }

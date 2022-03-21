@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:navigation_menu/categories_screen.dart';
+
+import 'categories_screen.dart';
 
 void main() => runApp(MyApp());
 
@@ -9,8 +10,24 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'DeliMeals',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.blueGrey,
+        accentColor: Colors.amber,
+        fontFamily: "Raleway",
+        textTheme: ThemeData.light().textTheme.copyWith(
+              bodyText1: TextStyle(
+                color: Color.fromRGBO(20, 51, 51, 1),
+              ),
+              bodyText2: TextStyle(
+                color: Color.fromARGB(255, 235, 241, 241),
+              ),
+              subtitle1: TextStyle(
+                fontSize: 24,
+                fontFamily: "RobotoCondensed",
+              ),
+            ),
+        canvasColor: Color.fromARGB(0, 110, 108, 108),
       ),
+
       //here we are pointing which widget is going to be our first screen in our application
       //home: MyHomePage()
       home: CategoriesScreen(),
