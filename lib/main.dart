@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import './category_meals_screen.dart';
 import 'categories_screen.dart';
 
 void main() => runApp(MyApp());
@@ -10,27 +11,35 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'DeliMeals',
       theme: ThemeData(
-        primarySwatch: Colors.blueGrey,
-        accentColor: Colors.amber,
-        fontFamily: "Raleway",
-        textTheme: ThemeData.light().textTheme.copyWith(
-              bodyText1: TextStyle(
-                color: Color.fromRGBO(20, 51, 51, 1),
+          primarySwatch: Colors.lightBlue,
+          accentColor: Colors.amber,
+          fontFamily: "Raleway",
+          textTheme: ThemeData.light().textTheme.copyWith(
+                bodyText1: TextStyle(
+                  color: Color.fromRGBO(20, 51, 51, 1),
+                ),
+                bodyText2: TextStyle(
+                  color: Color.fromARGB(255, 235, 241, 241),
+                ),
+                subtitle1: TextStyle(
+                  fontSize: 20,
+                  fontFamily: "RobotoCondensed",
+                  fontWeight: FontWeight.bold,
+                ),
               ),
-              bodyText2: TextStyle(
-                color: Color.fromARGB(255, 235, 241, 241),
-              ),
-              subtitle1: TextStyle(
-                fontSize: 24,
-                fontFamily: "RobotoCondensed",
-              ),
-            ),
-        canvasColor: Color.fromARGB(0, 110, 108, 108),
-      ),
+          //canvasColor: Color.fromRGBO(229, 36, 36, 0),
+          canvasColor: Color.fromARGB(255, 166, 221, 247)),
 
       //here we are pointing which widget is going to be our first screen in our application
       //home: MyHomePage()
       home: CategoriesScreen(),
+      initialRoute: '/',
+      //we can use the routes table instead of the home
+      //a route is a screen
+      routes: {
+        //'/': (ctx) => CategoriesScreen(),
+        CategoryMealsScreen.routeName: (ctx) => CategoryMealsScreen(),
+      },
     );
   }
 }

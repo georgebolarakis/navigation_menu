@@ -16,7 +16,13 @@ class CategoriesScreen extends StatelessWidget {
         //we need to add some padding around the gridView
         padding: const EdgeInsets.all(25),
         children: DUMMY_CATEGORIES
-            .map((catData) => CategoryItem(catData.title, catData.color))
+            .map(
+              (catData) => CategoryItem(
+                catData.id,
+                catData.title,
+                catData.color,
+              ),
+            )
             .toList(),
         //this is how we define a grid view
         gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
