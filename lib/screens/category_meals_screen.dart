@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_complete_guide/category_item.dart';
 
-import './dummy_data.dart';
+import '../widgets/meal_item.dart';
+import '../widgets/category_item.dart';
+import '../dummy_data.dart';
 
 class CategoryMealsScreen extends StatelessWidget {
   //these are used for when we use the push navigator in category_item page
@@ -40,7 +41,13 @@ class CategoryMealsScreen extends StatelessWidget {
       ),
       body: ListView.builder(
         itemBuilder: (ctx, index) {
-          return Text(categoryMeals[index].title);
+          return MealItem(
+            title: categoryMeals[index].title,
+            imageUrl: categoryMeals[index].imageUrl,
+            affordability: categoryMeals[index].affordability,
+            duration: categoryMeals[index].duration,
+            complexity: categoryMeals[index].complexity,
+          );
         },
         itemCount: categoryMeals.length,
       ),

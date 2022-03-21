@@ -1,7 +1,7 @@
 //it will output a single category item in our grid of categories
 import 'package:flutter/material.dart';
 
-import './category_meals_screen.dart';
+import '../screens/category_meals_screen.dart';
 
 class CategoryItem extends StatelessWidget {
   //const CategoryItem({Key? key}) : super(key: key);
