@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
                   color: Color.fromRGBO(20, 51, 51, 1),
                 ),
                 bodyText2: TextStyle(
-                  color: Color.fromARGB(255, 235, 241, 241),
+                  color: Color.fromARGB(255, 20, 27, 27),
                 ),
                 subtitle1: TextStyle(
                   fontSize: 20,
