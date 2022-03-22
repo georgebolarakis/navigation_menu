@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_complete_guide/screens/tabs_screen.dart';
 
 import './screens/category_meals_screen.dart';
 import './screens/categories_screen.dart';
 import './screens/meal_detail_screen.dart';
+import './screens/tabs_screen.dart';
 
 void main() => runApp(MyApp());
 
@@ -33,14 +35,27 @@ class MyApp extends StatelessWidget {
 
       //here we are pointing which widget is going to be our first screen in our application
       //home: MyHomePage()
-      home: CategoriesScreen(),
+      // home: CategoriesScreen(),
       initialRoute: '/',
       //we can use the routes table instead of the home
       //a route is a screen
       routes: {
-        //'/': (ctx) => CategoriesScreen(),
+        '/': (ctx) => TabsScreen(),
         CategoryMealsScreen.routeName: (ctx) => CategoryMealsScreen(),
         MealDetailScreen.routeName: (ctx) => MealDetailScreen(),
+      },
+      //we are registering that if there is an unnamed route to always fall back to the CategoriesScreen
+      onGenerateRoute: (settings) {
+        print(settings.arguments);
+        return MaterialPageRoute(
+          builder: (ctx) => CategoriesScreen(),
+        );
+      },
+      //this runs when we don't define any route
+      onUnknownRoute: (settings) {
+        return MaterialPageRoute(
+          builder: (ctx) => CategoriesScreen(),
+        );
       },
     );
   }
